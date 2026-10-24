@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Special Birthday 💗</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{height:100dvh;overflow:hidden;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;background:radial-gradient(ellipse at top,#49316c 0%,transparent 60%),linear-gradient(145deg,#100e25,#301c48 55%,#120f2a);color:white;text-align:center;padding:10px}
+.stars{position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(2px 2px at 20% 30%,white,transparent),radial-gradient(2px 2px at 70% 20%,white,transparent),radial-gradient(2px 2px at 40% 80%,white,transparent),radial-gradient(2px 2px at 85% 65%,white,transparent);background-size:170px 170px;animation:sparkle 4s infinite alternate}
+@keyframes sparkle{from{opacity:.35}to{opacity:1}}
+.balloon{position:fixed;bottom:-180px;width:50px;height:64px;border-radius:50% 50% 46% 46%;z-index:1;opacity:.85;box-shadow:inset -8px -6px 12px rgba(0,0,0,.24),inset 7px 6px 10px rgba(255,255,255,.45);animation:floatUp 13s linear infinite,sway 3s ease-in-out infinite alternate}
+.balloon:after{content:"";position:absolute;top:66px;left:25px;width:1px;height:80px;background:rgba(255,255,255,.6)}
+.b1{left:3%;background:#ff528b;animation-delay:0s,0s}.b2{left:20%;background:#b57aff;animation-delay:3s,1s}.b3{left:80%;background:#ffcf70;animation-delay:1s,.5s}.b4{left:93%;background:#62d9ed;animation-delay:5s,1.5s}.b5{left:60%;background:#ff77c8;animation-delay:7s,.3s}
+@keyframes floatUp{0%{transform:translateY(0)}100%{transform:translateY(-130vh)}}
+@keyframes sway{from{margin-left:-10px}to{margin-left:10px}}
+
+.card{position:relative;z-index:2;width:100%;max-width:620px;max-height:calc(100dvh - 20px);display:flex;flex-direction:column;align-items:center;gap:clamp(6px,1.4vh,14px);padding:clamp(14px,2.5vh,26px) 20px;border:1px solid rgba(255,255,255,.24);border-radius:26px;background:rgba(255,255,255,.09);backdrop-filter:blur(16px);box-shadow:0 20px 70px rgba(0,0,0,.35);animation:arrive 1.1s ease,borderShine 3s ease-in-out infinite}
+.card::before{content:"";position:absolute;inset:9px;border:1px solid rgba(255,210,232,.32);border-radius:19px;box-shadow:inset 0 0 24px rgba(255,182,220,.06);pointer-events:none;animation:innerShine 3s ease-in-out infinite}
+@keyframes borderShine{0%,100%{border-color:rgba(255,255,255,.24);box-shadow:0 20px 70px rgba(0,0,0,.35),0 0 8px rgba(255,150,205,.18)}50%{border-color:rgba(255,210,235,.9);box-shadow:0 20px 70px rgba(0,0,0,.35),0 0 24px rgba(255,150,205,.72),inset 0 0 12px rgba(255,210,235,.14)}}
+@keyframes innerShine{0%,100%{border-color:rgba(255,210,232,.32);box-shadow:inset 0 0 24px rgba(255,182,220,.06)}50%{border-color:rgba(255,220,240,.78);box-shadow:inset 0 0 18px rgba(255,182,220,.16),0 0 12px rgba(255,160,210,.35)}}
+@keyframes arrive{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.tag{color:#ffd0e7;letter-spacing:3px;font:11px Arial,sans-serif}
+h1{font-size:clamp(26px,5.5vh,44px);color:#ffb6dc;text-shadow:0 0 22px #ff4fa7;line-height:1.1;animation:birthdayGlow 1.8s ease-in-out infinite,birthdayFloat 2.4s ease-in-out infinite}
+@keyframes birthdayGlow{0%,100%{opacity:1;text-shadow:0 0 12px #ff4fa7,0 0 24px rgba(255,79,167,.55)}50%{opacity:.62;text-shadow:0 0 4px #ff4fa7,0 0 10px rgba(255,79,167,.25)}}
+@keyframes birthdayFloat{0%,100%{transform:translateY(0);color:#ffb6dc}25%{transform:translateY(-2px);color:#ffe1a8}50%{transform:translateY(-5px);color:#a9edff}75%{transform:translateY(-2px);color:#d9b5ff}}
+.name{color:#ffe1a8;font-size:clamp(16px,2.8vh,22px);font-weight:normal}
+
+.photo-wrap{position:relative;flex:0 0 auto}
+.photo-frame{width:clamp(90px,21vh,170px);height:clamp(106px,25vh,200px);padding:5px;border-radius:90px 90px 16px 16px;background:linear-gradient(145deg,#ffe8b0,#ff80c0,#a78bfa);animation:photoGlow 3s ease-in-out infinite alternate}
+.photo-frame img{width:100%;height:100%;object-fit:cover;border-radius:85px 85px 12px 12px;display:block}
+@keyframes photoGlow{from{box-shadow:0 0 12px #ff8cc8}to{box-shadow:0 0 30px #ff8cc8}}
+.cake{position:absolute;right:-18px;bottom:-6px;font-size:clamp(32px,6vh,48px);animation:cakeBounce 2s ease-in-out infinite}
+@keyframes cakeBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+.message{width:100%;max-width:480px;min-height:0;overflow-y:auto;line-height:1.55;font-size:clamp(12.5px,1.9vh,15.5px);color:#f8eafa;padding:0 4px}
+.message strong{color:#ffc1df}
+.message::-webkit-scrollbar{width:4px}
+.message::-webkit-scrollbar-thumb{background:rgba(255,255,255,.3);border-radius:4px}
+
+.buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+button{border:none;border-radius:30px;padding:10px 16px;font-size:13px;cursor:pointer;transition:.3s;font-family:inherit}
+button:hover{transform:translateY(-2px);box-shadow:0 0 18px #ff91cc}
+.music{color:white;background:linear-gradient(45deg,#ec4899,#9364ee)}
+.surprise-btn{color:#3b214c;background:#ffe0f0}
+.footer{font:11px Arial,sans-serif;color:#d9b9eb}
+
+/* Letter as popup so the page never gets longer */
+#overlay{display:none;position:fixed;inset:0;z-index:20;background:rgba(10,6,25,.7);align-items:center;justify-content:center;padding:16px}
+#overlay.show{display:flex}
+#letter{position:relative;max-width:420px;width:100%;max-height:85dvh;overflow-y:auto;padding:24px 20px;border-radius:20px;background:linear-gradient(145deg,#3d2660,#2a1a45);border:1px solid rgba(255,255,255,.25);color:#ffe4f3;line-height:1.7;font-size:15px;animation:arrive .5s ease}
+#letter h2{font-size:18px;color:#ffb6dc;margin-bottom:12px}
+#letter p+p{margin-top:10px}
+.close{position:absolute;top:8px;right:10px;background:none;color:white;font-size:20px;padding:4px 8px;border-radius:8px}
+
+.confetti{position:fixed;top:-20px;z-index:30;pointer-events:none;animation:fall 4s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+
+/* Wide screens: photo on the left, text on the right */
+@media(min-width:760px) and (min-height:420px){
+ .card{max-width:860px;display:grid;grid-template-columns:auto 1fr;grid-template-areas:"photo head" "photo msg" "photo btn" "photo foot";column-gap:34px;align-content:center;text-align:center;padding:26px 36px}
+ .photo-wrap{grid-area:photo;align-self:center}
+ .photo-frame{width:clamp(150px,34vh,230px);height:clamp(180px,41vh,276px)}
+ .head{grid-area:head}.message{grid-area:msg;max-width:none}.buttons{grid-area:btn}.footer{grid-area:foot}
+}
+.head{display:flex;flex-direction:column;align-items:center;gap:4px}
+.head::after{content:"✦  ♡  ✦";margin-top:2px;color:#ffd0e7;font-size:13px;letter-spacing:4px;text-shadow:0 0 12px rgba(255,143,200,.8)}
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<div class="balloon b1"></div><div class="balloon b2"></div><div class="balloon b3"></div><div class="balloon b4"></div><div class="balloon b5"></div>
+
+<main class="card">
+ <div class="head">
+  <p class="tag">A DAY MADE JUST FOR YOU</p>
+  <h1>Happy Birthday!</h1>
+  <!-- Change the name below -->
+ </div>
+
+ <div class="photo-wrap">
+  <div class="photo-frame">
+   <img src="c:\Users\Shane Carestian\Downloads\happy birthday.jpg" alt="Birthday person's photo" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;padding-top:30%;font-size:40px&quot;>📸💗</div><p style=&quot;font:12px Arial;color:white&quot;>Add your photo as birthday.jpg</p>';">
+  </div>
+  <div class="cake">🎂</div>
+ </div>
+
+ <div class="message">
+  Happy Birthday, Ate DenDen! 🎂💗May God bless you with good health, a joyful heart, and peace in every season of your life. 
+  May He keep you safe, guide every step you take, and give you strength in your work. 
+  May He also reward you for all the kindness you give to others.
+  Thank you for being such a wonderful big sister to us. 
+  May God pour out His blessings on you abundantly, today and always. We love you so much, Ate! ❤️🎉 Happy Birthday! 💖✨
+ </div>
+
+ <div class="buttons">
+  <button class="music" id="musicBtn" onclick="toggleMusic()">🎵 Play Birthday Song</button>
+  <button class="surprise-btn" onclick="openLetter()">💌 Read My Special Message</button>
+ </div>
+ <p class="footer">Made with love, just for you ✨</p>
+</main>
+
+<div id="overlay" onclick="if(event.target===this)closeLetter()">
+ <div id="letter">
+  <button class="close" onclick="closeLetter()" aria-label="Close">✕</button>
+  <h2>A Little Message From Big Boss 💌</h2>
+  <p>Happy Birthday sa pinaka gwapa nako na Ate, Mangayo ko ug Gcash pang palit ug skin. 🫶</p>
+  <p>Thank you! 💗</p>
+ </div>
+</div>
+
+<audio id="birthdaySong" src="birthday-song.mp4" preload="none" loop></audio>
+
+<script>
+let playing=false;
+const birthdaySong=document.getElementById("birthdaySong");
+async function toggleMusic(){
+ const btn=document.getElementById("musicBtn");
+ if(playing){birthdaySong.pause();birthdaySong.currentTime=0;playing=false;btn.textContent="🎵 Play Birthday Song";return;}
+ try{
+  await birthdaySong.play();
+  playing=true;btn.textContent="⏸ Stop Birthday Song";
+ }catch{
+  alert("Could not play the birthday recording. Check that birthday-song.mp4 is beside index.html, or try opening the page in Microsoft Edge.");
+ }
+}
+function openLetter(){
+ document.getElementById("overlay").classList.add("show");
+ for(let i=0;i<45;i++){
+  const p=document.createElement("div");p.className="confetti";
+  p.textContent=["💖","✨","🎉","🌸","💕"][Math.floor(Math.random()*5)];
+  p.style.left=Math.random()*100+"vw";p.style.fontSize=(14+Math.random()*18)+"px";
+  p.style.animationDuration=(2+Math.random()*3)+"s";document.body.appendChild(p);
+  setTimeout(()=>p.remove(),5000);
+ }
+}
+function closeLetter(){document.getElementById("overlay").classList.remove("show");}
+</script>
+</body>
+</html>
